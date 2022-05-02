@@ -13,5 +13,8 @@ const p3 = new Promise((resolve, reject) => {
 });
 
 
-Promise.all( [p1, p2, p3] )
-  .then((values) => console.log("values", values));
+Promise.all([p1, p2, p3]).then((valuesArray) => {
+  console.log(
+    `Hello my name is ${valuesArray[2].name} and my bank account is ${valuesArray[0]} ${valuesArray[1]}`
+  );
+});

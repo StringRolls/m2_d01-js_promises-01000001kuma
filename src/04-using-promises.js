@@ -7,15 +7,16 @@ const directions = [
 
 
 function obtainDirections(step) {
-  return new Promise (function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log( directions[step] );
-
-      if (!directions[step]) reject('Instructions not found.')
-      else resolve();
-    }, 2000); 
-    
-  })
+      if (!directions[step]) {
+        reject("Instructions not found.");
+      } else {
+        console.log(directions[step]);
+        resolve();
+      }
+    }, 1500 + Math.random() * 1000);
+  });
 }
 
 
